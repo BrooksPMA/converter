@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="height: 100%">
+<html lang="ru" class="h-100">
 
 <head>
     <!-- Required meta tags -->
@@ -12,9 +12,9 @@
     <title>Конвертер валют</title>
 </head>
 
-<body style="min-height: 100%" >
-    <div class="container h-100" >
-        <div class="row h-100" >
+<body class="h-100">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
             <div class="col-sm-12 my-auto">
                 <div class="card mx-auto" style="max-width: 400px;">
                     <form action="" method="get">
@@ -66,7 +66,6 @@
             </div>
         </div>
     </div>
-    <
 </body>
 
 </html>
