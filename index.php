@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Конвертер валют</title>
+    <title>Конвертов валют</title>
 </head>
 
 <body>
@@ -47,7 +47,7 @@
 
             $badMessage = "Неверно введена валюта!";
         } else {
-            $result = $converter->convert(mb_strtolower($_GET['from']), mb_strtolower($_GET['to']), floatval(str_replace(",", ".", ($_GET['sum']))), true);
+            $result = $converter->convert(mb_strtolower($_GET['from']), mb_strtolower($_GET['to']), mb_strtolower($_GET['sum']), true);
             $currName = $converter->getCurrencyName(mb_strtolower($_GET['to']));
             $succesMessage = ("Результат: " . $result . " " . $currName . " ");
         }
