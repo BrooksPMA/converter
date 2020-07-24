@@ -28,7 +28,7 @@
                                 </label>
                                 <select class="form-control" name="from">
                                     <?php foreach ($res as $key => $value) { ?>
-                                        <option value="<?= $value ?>" <?= $_GET['from'] == $value ? "selected" : "" ?>><?=  $converter->getCurrencyName($value); ?></option>
+                                        <option value="<?= $value ?>" <?= ($_GET['from'] ?? 'usd') == $value ? "selected" : "" ?>><?=  $converter->getCurrencyName($value); ?></option>
                                     <?php } ?>
                                 </select> <br>
                                 <label for="to">
@@ -36,13 +36,13 @@
                                 </label>
                                 <select class="form-control" name="to">
                                     <?php foreach ($res as $key => $value) { ?>
-                                        <option value="<?= $value ?>" <?= $_GET['to'] == $value ? "selected" : "" ?>><?= $converter->getCurrencyName($value); ?></option>
+                                        <option value="<?= $value ?>" <?= ($_GET['to'] ?? 'rub') == $value ? "selected" : "" ?>><?= $converter->getCurrencyName($value); ?></option>
                                     <?php } ?>
                                 </select> <br>
                                 <label for="sum">
                                     <h4>Сумма:</h4>
                                 </label>
-                                <input class="form-control" id="sum" type="text" name="sum" value='<?= $_GET['sum'] ?>'> <br>
+                                <input class="form-control" id="sum" type="text" name="sum" value='<?= $_GET['sum'] ?? 0 ?>'> <br>
                                 <?php if (isset($badMessage)) { ?>
                                     <div class="alert alert-danger" role="alert">
                                         <?php echo $badMessage; ?>

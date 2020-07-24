@@ -77,9 +77,12 @@ class Converter
                 $this->currency[mb_strtolower($key)] = [
                     'rate' => $value["Value"] / $value["Nominal"],
                     'name' => $value["Name"],
-
                 ];
             }
+            $this->currency['rub'] = [
+                'rate' => 1,
+                'name' => 'Российский рубль',
+            ];            
             file_put_contents($filePath, json_encode($this->currency, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
         }
     }
